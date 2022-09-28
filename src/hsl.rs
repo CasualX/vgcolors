@@ -9,6 +9,9 @@ pub struct HSL {
 	pub light: f32,
 }
 
+#[cfg(feature = "dataview")]
+unsafe impl dataview::Pod for HSL {}
+
 #[macro_export]
 macro_rules! HSL {
 	($hue:literal, $sat:literal %, $light:literal %) => {

@@ -12,6 +12,9 @@ pub struct sRGBA {
 	pub alpha: u8,
 }
 
+#[cfg(feature = "dataview")]
+unsafe impl dataview::Pod for sRGBA {}
+
 #[inline]
 #[allow(non_snake_case)]
 pub const fn sRGBA(red: u8, green: u8, blue: u8, alpha: u8) -> sRGBA {

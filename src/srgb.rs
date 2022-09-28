@@ -11,6 +11,9 @@ pub struct sRGB {
 	pub blue: u8,
 }
 
+#[cfg(feature = "dataview")]
+unsafe impl dataview::Pod for sRGB {}
+
 #[inline]
 #[allow(non_snake_case)]
 pub const fn sRGB(red: u8, green: u8, blue: u8) -> sRGB {

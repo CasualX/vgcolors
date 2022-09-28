@@ -11,6 +11,9 @@ pub struct RGBA {
 	pub alpha: f32,
 }
 
+#[cfg(feature = "dataview")]
+unsafe impl dataview::Pod for RGBA {}
+
 #[inline]
 #[allow(non_snake_case)]
 pub const fn RGBA(red: f32, green: f32, blue: f32, alpha: f32) -> RGBA {

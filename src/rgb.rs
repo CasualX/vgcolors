@@ -10,6 +10,9 @@ pub struct RGB {
 	pub blue: f32,
 }
 
+#[cfg(feature = "dataview")]
+unsafe impl dataview::Pod for RGB {}
+
 #[inline]
 #[allow(non_snake_case)]
 pub const fn RGB(red: f32, green: f32, blue: f32) -> RGB {
